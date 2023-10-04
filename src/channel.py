@@ -32,17 +32,22 @@ class Channel:
 
     @property
     def channel_id(self):
+
         return self.__channel_id
 
     @classmethod
     def get_service(cls):
+        '''Метод возвращающий объект для работы с YouTube API'''
         youtube = build('youtube', 'v3', developerKey=api_key)
+
         return youtube
 
     def to_json(self, data_file):
+        '''Метод сохраняющий в файл значения атрибутов экземпляра'''
         with open(data_file, "w", encoding='utf-8') as jsonfile:
             id = self.channel_id
             channel = youtube.channels().list(id=id, part='snippet,statistics').execute()
+
             return jsonfile.write(json.dumps(channel))
 
 
