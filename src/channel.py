@@ -21,7 +21,7 @@ class Channel:
         self.view_count = channel['items'][0]['statistics']['viewCount']
 
     def print_info(self) -> None:
-        """Выводит в консоль информацию о канале."""
+        """Выводит в консоль информацию о канале ."""
         id_ = self.channel_id
         channel = self.get_service().channels().list(id=id_, part='snippet,statistics').execute()
         return print(json.dumps(channel, indent=2, ensure_ascii=False))
