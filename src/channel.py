@@ -43,7 +43,6 @@ class Channel:
         """Метод сохраняющий в файл значения атрибутов экземпляра"""
         fff = []
         with open(data_file, "w", encoding='utf-8') as jsonfile:
-            # id_ = self.channel_id
             # fff.append(self.channel_id)
             fff.append(self.title)
             fff.append(self.description)
@@ -51,7 +50,6 @@ class Channel:
             fff.append(self.subscriber_count)
             fff.append(self.video_count)
             fff.append(self.view_count)
-            # channel = youtube.channels().list(id=id_, part='snippet,statistics').execute()
 
             return jsonfile.write(json.dumps(fff))
 
