@@ -41,15 +41,15 @@ class Channel:
 
     def to_json(self, data_file):
         """Метод сохраняющий в файл значения атрибутов экземпляра"""
-        fff = []
+        data_list = []
         with open(data_file, "w", encoding='utf-8') as jsonfile:
             # fff.append(self.channel_id)
-            fff.append(self.title)
-            fff.append(self.description)
-            fff.append(self.url)
-            fff.append(self.subscriber_count)
-            fff.append(self.video_count)
-            fff.append(self.view_count)
+            data_list.append(self.title)
+            data_list.append(self.description)
+            data_list.append(self.url)
+            data_list.append(self.subscriber_count)
+            data_list.append(self.video_count)
+            data_list.append(self.view_count)
 
-            return jsonfile.write(json.dumps(fff))
+            return jsonfile.write(json.dumps(data_list))
 
