@@ -24,21 +24,27 @@ class Channel:
         return f'{self.title} ({self.url})'
 
     def __add__(self, other):
+        """Складывает количество подписчиков"""
         return int(self.subscriber_count) + int(other.subscriber_count)
 
     def __sub__(self, other):
+        """Вычитает количество подписчиков"""
         return int(self.subscriber_count) - int(other.subscriber_count)
 
     def __gt__(self, other):
+        """Сравнивает количество подписчиков"""
         return int(self.subscriber_count) > int(other.subscriber_count)
 
     def __ge__(self, other):
+        """Сравнивает количество подписчиков"""
         return int(self.subscriber_count) >= int(other.subscriber_count)
 
     def __lt__(self, other):
+        """Сравнивает количество подписчиков"""
         return int(self.subscriber_count) < int(other.subscriber_count)
 
     def __le__(self, other):
+        """Сравнивает количество подписчиков"""
         return int(self.subscriber_count) <= int(other.subscriber_count)
 
     def print_info(self) -> None:
