@@ -49,8 +49,8 @@ class PlayList(MixinGet):
         """Выводит в консоль информацию о канале ."""
         playlist_id = self.__playlist_id
         channel = self.get_service().videos().list(part='contentDetails', id='MtWXwMCAApY').execute()
-        return print(json.dumps(channel, indent=2, ensure_ascii=False))
+        return print(json.dumps(channel, indent=3, ensure_ascii=False))
 
 
-# pl = PlayList('PLv_zOGKKxVpj-n2qLkEM2Hj96LO6uqgQw')
-# pl.print_info()
+pl = PlayList('PLv_zOGKKxVpj-n2qLkEM2Hj96LO6uqgQw')
+pl.print_info()
